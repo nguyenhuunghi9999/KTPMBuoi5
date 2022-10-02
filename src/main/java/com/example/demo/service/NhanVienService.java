@@ -16,4 +16,6 @@ public interface NhanVienService {
     List<NhanVien> findNhanViensGroupByLoaiMayBays();
 
     List<NhanVien> findNhanViensByMaSo();
+
+    List<NhanVien> findNhanViensByLoaiMayBays();
 }

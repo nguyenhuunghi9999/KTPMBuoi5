@@ -36,4 +36,9 @@ public class NhanVienImpl implements NhanVienService {
     public List<NhanVien> findNhanViensByMaSo() {
         return nhanVienRepository.findNhanViensByMaSo();
     }
+
+    @Override
+    public List<NhanVien> findNhanViensByLoaiMayBays() {
+        return nhanVienRepository.findNhanViensByLoaiMayBays();
+    }
 }

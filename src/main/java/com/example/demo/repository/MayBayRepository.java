@@ -21,10 +21,7 @@ public interface MayBayRepository extends JpaRepository<MayBay, String> {
     List<MayBay> findLoaiMayBaysBoeing();
 
     @Query(
-            value = "select * from maybay m\n" +
-                    "left join chungnhan c on m.mamb= c.ma_mb\n" +
-                    "left join nhanvien n on  n.manv = c.ma_mv\n" +
-                    "where n.ten like N'%Nguyễn%'",
+            value = "select * from maybay m left join chungnhan c on m.mamb= c.mamb left join nhanvien n on  n.manv = c.manv where n.ten like N'%Nguyễn%'",
             nativeQuery = true)
     List<MayBay> findMayBaysByTenNhanVien();
 }

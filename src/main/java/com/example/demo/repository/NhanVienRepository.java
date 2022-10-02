@@ -21,10 +21,15 @@ public interface NhanVienRepository extends JpaRepository<NhanVien, String> {
     Float getTotalSalaryAllNhanVien();
 
     @Query(
-            value = "SELECT  * FROM nhanvien n LEFT JOIN chungnhan c on n.manv= c.ma_mv  LEFT JOIN maybay m ON  m.mamb = c.ma_mb  where m.loai like N'%Boeing%'",
+            value = "SELECT  * FROM nhanvien n LEFT JOIN chungnhan c on n.manv= c.manv  LEFT JOIN maybay m ON  m.mamb = c.mamb  where m.loai like N'%Boeing%'",
             nativeQuery = true)
     List<NhanVien> findNhanViensGroupByLoaiMayBays();
 
-    @Query(value = "SELECT * FROM nhanvien n  JOIN chungnhan c on n.manv= c.ma_mv where c.ma_mB ='747'", nativeQuery = true)
+    @Query(value = "SELECT * FROM nhanvien n  JOIN chungnhan c on n.manv = c.manv where c.mamb ='747'", nativeQuery = true)
     List<NhanVien> findNhanViensByMaSo();
+
+    @Query(
+            value = "SELECT  * FROM nhanvien n LEFT JOIN chungnhan c on n.manv= c.manv  LEFT JOIN maybay m ON  m.mamb = c.mamb  where m.loai like N'%Boeing%' and N'%Airbus%' ",
+            nativeQuery = true)
+    List<NhanVien> findNhanViensByLoaiMayBays();
 }

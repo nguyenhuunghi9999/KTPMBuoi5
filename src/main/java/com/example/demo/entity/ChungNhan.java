@@ -14,12 +14,14 @@ public class ChungNhan {
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "ma_mb")
-    private MayBay mamb;
+    @JoinColumn(name = "manv")
+    private NhanVien manv;
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "ma_mv")
-    private NhanVien manv;
+    @JoinColumn(name = "mamb")
+    private MayBay mamb;
+
+
 
 }
